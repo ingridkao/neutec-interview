@@ -1,0 +1,25 @@
+@import './base.scss';
+
+$colWidth: 200px;
+main{
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	max-width: $colWidth*3;
+	.row{
+		display: flex;
+		flex-direction: row;
+	}
+	.col{
+		width: $colWidth;
+		height: $colWidth/2;
+		border: black solid 2px;
+		background: radial-gradient(circle, rgba(113,81,95,1) 81%, rgba(0,0,0,1) 100%);
+
+		margin: 0.25rem;
+	}
+}
+
+@media (min-width: 1024px) {
+}
