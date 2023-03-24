@@ -17,18 +17,31 @@ main{
 	}
 	.col{
 		position: relative;
-		
 		width: $colWidth;
 		height: $colHeight;
 		border: black solid 2px;
-		background: radial-gradient(circle, rgba(113,81,95,1) 81%, rgba(0,0,0,1) 100%);
-
 		margin: 0.25rem;
-		opacity: 1;
+
+		// background: radial-gradient(circle, rgba(113,81,95,1) 81%, rgba(0,0,0,1) 100%);
+		// opacity會影響呈現順序，用偽元素來切開
+		&::before{
+			content: '';
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+			background: radial-gradient(circle, rgba(113,81,95,1) 81%, rgba(0,0,0,1) 100%);
+		}
+		&.flashing::before{
+			animation: flashing 1s infinite;
+		}
 	}
 	.ball{
 		position: absolute;
-		z-index: 100;
+		z-index: 2;
+		opacity: 1;
 		top: calc(($colHeight - $ballWidth) / 2);
 		left: calc(($colWidth - $ballWidth) / 2);
 		width: $ballWidth;
@@ -36,12 +49,12 @@ main{
 		
 		border-radius: 50%;
 		background-color: #A5F12B;
-		opacity: 1;
 	}
 }
 
-.flashing{
-	animation: flashing 1s infinite;
+@keyframes flashing{
+    from{ opacity: 1;}
+    to{ opacity: 0.6;}
 }
 
 .move1{
@@ -50,11 +63,6 @@ main{
 
 .move2{
 	animation: move2 4s infinite;
-}
-
-@keyframes flashing{
-    from{ opacity: 1;}
-    to{ opacity: 0.6;}
 }
 
 @keyframes move1{
