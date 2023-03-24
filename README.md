@@ -25,3 +25,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Memo
+Github action deploy失敗：
+要設定github actions時記得先去Setting>Pages，將Build and deployment中的Source設定為『GitHub Actions』
