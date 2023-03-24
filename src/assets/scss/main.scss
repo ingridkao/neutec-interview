@@ -1,24 +1,48 @@
 @import './base.scss';
 
 $colWidth: 200px;
+$colHeight: $colWidth/2;
+$ballWidth: 30px;
 main{
 	display: flex;
 	flex-direction: column;
 
 	width: 100%;
 	max-width: $colWidth*3;
+	overflow: hidden;
 	.row{
 		display: flex;
 		flex-direction: row;
 	}
 	.col{
+		position: relative;
+
 		width: $colWidth;
-		height: $colWidth/2;
+		height: $colHeight;
 		border: black solid 2px;
 		background: radial-gradient(circle, rgba(113,81,95,1) 81%, rgba(0,0,0,1) 100%);
 
 		margin: 0.25rem;
 	}
+	.ball{
+		position: absolute;
+		top: calc(($colHeight - $ballWidth) / 2);
+		left: calc(($colWidth - $ballWidth) / 2);
+		width: $ballWidth;
+		height: $ballWidth;
+		
+		border-radius: 50%;
+		background-color: #A5F12B;
+	}
+}
+
+.flashing{
+	animation: flashing 2s infinite;
+}
+
+@keyframes flashing{
+    from{ opacity: 100%;}
+    to{ opacity: 60%;}
 }
 
 @media (min-width: 1024px) {
