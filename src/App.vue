@@ -8,11 +8,11 @@
 	<main>
 		<div class="row">
 			<div class="col">
-				<div class="ball"></div>
+				<div class="ball move1"></div>
 			</div>
 			<div class="col"></div>
 			<div class="col flashing">
-				<div class="ball"></div>
+				<div class="ball move2"></div>
 			</div>
 		</div>
 		<div class="row">
@@ -22,11 +22,11 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<div class="ball"></div>
+				<div class="ball move1"></div>
 			</div>
 			<div class="col"></div>
 			<div class="col flashing">
-				<div class="ball"></div>
+				<div class="ball move2"></div>
 			</div>
 		</div>
 	</main>
